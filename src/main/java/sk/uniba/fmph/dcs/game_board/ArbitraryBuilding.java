@@ -8,7 +8,7 @@ import java.util.OptionalInt;
 public final class ArbitraryBuilding implements Building {
     private final int maxNumberOfResources;
 
-    public ArbitraryBuilding(int maxNumberOfResources) {
+    public ArbitraryBuilding(final int maxNumberOfResources) {
         this.maxNumberOfResources = maxNumberOfResources;
         if (maxNumberOfResources == 0) {
             throw new IllegalArgumentException("At least 1 resource");
