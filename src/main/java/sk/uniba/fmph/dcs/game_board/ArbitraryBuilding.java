@@ -7,7 +7,7 @@ import java.util.OptionalInt;
 
 public final class ArbitraryBuilding implements Building {
     private final int maxNumberOfResources;
-    private final static int MAX_NUMBER_ALLOWED = 7;
+    private static final int MAX_NUMBER_ALLOWED = 7;
 
     public ArbitraryBuilding(final int maxNumberOfResources) {
         this.maxNumberOfResources = maxNumberOfResources;
