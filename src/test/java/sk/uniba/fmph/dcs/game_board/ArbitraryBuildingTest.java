@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.OptionalInt;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ArbitraryBuildingTest {
     @Test
@@ -38,12 +39,7 @@ public class ArbitraryBuildingTest {
         ArrayList<Effect> otherResources3 = new ArrayList<>();
         otherResources3.add(Effect.FOOD);
         assertEquals(building.build(otherResources3), OptionalInt.empty());
-        try {
-            ArbitraryBuilding building1 = new ArbitraryBuilding(0);
-        } catch (Exception e) {
-            assert (e instanceof IllegalArgumentException);
-        }
-
-
+        assertThrows(IllegalArgumentException.class, () -> new ArbitraryBuilding(0));
+        assertThrows(IllegalArgumentException.class, () -> new ArbitraryBuilding(8));
     }
 }

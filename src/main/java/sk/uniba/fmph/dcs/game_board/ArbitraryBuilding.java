@@ -7,13 +7,15 @@ import java.util.OptionalInt;
 
 public final class ArbitraryBuilding implements Building {
     private final int maxNumberOfResources;
+    private final static int MAX_NUMBER_ALLOWED = 7;
 
     public ArbitraryBuilding(final int maxNumberOfResources) {
         this.maxNumberOfResources = maxNumberOfResources;
-        if (maxNumberOfResources <= 0 || maxNumberOfResources > 7) {
-            throw new IllegalArgumentException("At least 1 and most 7 resources are required");
+        if (maxNumberOfResources <= 0 || maxNumberOfResources > MAX_NUMBER_ALLOWED) {
+            throw new IllegalArgumentException("At least 1 resource and most 7 resources are required");
         }
     }
+
     @Override
     public OptionalInt build(final Collection<Effect> resources) {
         if (resources.size() > maxNumberOfResources || resources.isEmpty()) {
@@ -28,5 +30,4 @@ public final class ArbitraryBuilding implements Building {
         }
         return OptionalInt.of(sum);
     }
-
 }
