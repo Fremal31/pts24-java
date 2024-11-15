@@ -10,8 +10,8 @@ public final class ArbitraryBuilding implements Building {
 
     public ArbitraryBuilding(final int maxNumberOfResources) {
         this.maxNumberOfResources = maxNumberOfResources;
-        if (maxNumberOfResources == 0) {
-            throw new IllegalArgumentException("At least 1 resource");
+        if (maxNumberOfResources <= 0 || maxNumberOfResources > 7) {
+            throw new IllegalArgumentException("At least 1 and most 7 resources are required");
         }
     }
     @Override
